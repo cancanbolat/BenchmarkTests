@@ -6,3 +6,4 @@
 | GetAllUsersV1 | 61.45 ms | 1.171 ms | 1.439 ms |
 | GetAllUsersV2 | 61.60 ms | 1.162 ms | 1.511 ms |
 | GetAllUsersV3 | 39.25 ms | 0.777 ms | 0.831 ms |
+| GetAllUsersV4 | 39.34 ms | 0.766 ms | 0.679 ms |

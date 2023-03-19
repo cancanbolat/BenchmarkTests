@@ -15,7 +15,7 @@ public class Program
 
 public class ProcessBenchmark
 {
-    [Benchmark]
+    //[Benchmark]
     public List<User> GetAllUsers()
     {
         AppDbContext appDbContext = new();
@@ -24,7 +24,7 @@ public class ProcessBenchmark
         return repository.GetAllAsync(x => true).GetAwaiter().GetResult().ToList();
     }
 
-    [Benchmark]
+    //[Benchmark]
     public List<User> GetAllUsersV1()
     {
         AppDbContext appDbContext = new();
@@ -32,7 +32,7 @@ public class ProcessBenchmark
         return appDbContext.Users.ToList();
     }
 
-    [Benchmark]
+    //[Benchmark]
     public List<User> GetAllUsersV2()
     {
         AppDbContext appDbContext = new();
@@ -74,5 +74,14 @@ public class ProcessBenchmark
             Phone = y.Phone,
             CompanyName = y.CompanyName
         }).ToList();
+    }
+
+    [Benchmark]
+    public List<User> GetAllUsersV4()
+    {
+        AppDbContext appDbContext = new();
+        Repository<User> repository = new(appDbContext);
+
+        return repository.GetAll(x => true).ToList();
     }
 }
