@@ -21,3 +21,7 @@
 |    GetSingleV3 | 461.1 us | 2.95 us | 2.76 us |
 |    GetSingleV4 | 501.0 us | 3.87 us | 3.62 us |
 |    GetSingleV5 | 495.2 us | 4.52 us | 3.77 us |
+
+### Todo
+- [ ] Other method tests
+- [ ] Dapper tests
