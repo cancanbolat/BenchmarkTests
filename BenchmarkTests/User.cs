@@ -10,7 +10,6 @@ public class User
     public string UserName { get; set; }
     public string Avatar { get; set; }
     public string Email { get; set; }
-    public string MyProperty { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string Street { get; set; }
     public string Suite { get; set; }

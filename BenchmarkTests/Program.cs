@@ -1,9 +1,25 @@
-﻿namespace BenchmarkTests;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
-internal class Program
+namespace BenchmarkTests;
+
+[MemoryDiagnoser]
+public class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        var summary = BenchmarkRunner.Run<ProcessBenchmark>();
+    }
+}
+
+public class ProcessBenchmark
+{
+    [Benchmark]
+    public List<User> GetAllUsers()
+    {
+        AppDbContext appDbContext = new();
+        Repository<User> repository = new(appDbContext);
+        
+        return repository.GetAllAsync(x => true).GetAwaiter().GetResult().ToList();
     }
 }
